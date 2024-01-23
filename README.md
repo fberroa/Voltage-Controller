@@ -12,5 +12,5 @@
 
 Ejemplo:
 Tenemos un umbral predefinido de 3V, es decir, la tensión máxima tolerable. Si la lectura del ACD arroja un valor X.
-<p>Comparación = X-3</p>
+<p>Comparación = X - 3</p>
 <p>Si la comparación arroja un valor positivo, la bandera C marcará se activará. Por lo tanto, se hará un salto a rutina de apagado del motor.</p>
