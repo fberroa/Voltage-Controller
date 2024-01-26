@@ -35,7 +35,7 @@ Switch_on      		BTFSS	GPIO, 	4
             		GOTO 	Switch_on
             		GOTO	ON
 
-;Revision de tensi髇
+;Revision de tensi贸n
 Switch_off			BTFSC	GPIO,	4
 					GOTO	V_check
 					GOTO	OFF
@@ -49,13 +49,13 @@ goback				BTFSS	PIR1,	6
 					MOVF	THRESHOLD,	0		
 					SUBWF	VOLT,0				;Realiza la resta de entre VOLT y THRESHOLD (VOLT - THRESHOLD)
 					BTFSC	STATUS,C			;Verificar si la resta produce Borrow
-					GOTO	ON					;Corriente menor al umbral
-					GOTO	OFF					;Corriente mayor al umbral	
+					GOTO	ON					;Tensi贸n menor al umbral
+					GOTO	OFF					;Tensi贸n mayor al umbral	
 					
 ;ON/OFF
 ON					BSF		GPIO,	5			;Encender motor
 					GOTO	Switch_off
-OFF					BCF		GPIO, 	5			;Apagar motor del molino por sobrevoltaje o por fin de operaci髇
+OFF					BCF		GPIO, 	5			;Apagar motor por sobrevoltaje o por fin de operaci贸n
 					GOTO	Switch_on
 
 END
